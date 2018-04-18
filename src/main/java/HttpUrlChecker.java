@@ -24,6 +24,12 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class HttpUrlChecker {
+public class HttpUrlChecker
+{
+    private static String pattern = "^(https?:\\/\\/)([\\w]+(-*[\\w])*)(\\.[\\w]+(-*[\\w])*)+$";
 
+    public static Matcher getMatcher(String s)
+    {
+        return Pattern.compile(pattern).matcher(s);
+    }
 }
